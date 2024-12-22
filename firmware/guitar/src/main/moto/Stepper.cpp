@@ -30,7 +30,7 @@ void Stepper::setSteps(int steps) {
 }
 
 void Stepper::step(long steps) {
-    pinMode(this->dirPin, steps > 0 ? HIGH : LOW);
+    digitalWrite(this->dirPin, steps > 0 ? HIGH : LOW);
     steps = steps > 0 ? steps : -steps;
     while (steps > 0) {
         digitalWrite(this->stepPin, HIGH);
